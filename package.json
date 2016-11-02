@@ -1,5 +1,5 @@
 {
-  "name": "requirejs-webpack-plugin",
+  "name": "requirejs-test",
   "main": "index.js",
   "author": "smailsky",
   "description": "Webpack plugin that update cache for requirejs",

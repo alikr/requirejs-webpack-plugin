@@ -1,0 +1,19 @@
+{
+  "name": "requirejs-webpack-plugin-example",
+  "version": "1.0.0",
+  "description": "requirejs-webpack-plugin-example",
+  "main": "",
+  "bin": {
+    "webpack": "./node_modules/.bin/webpack"
+  },
+  "scripts": {
+    "start": "webpack --progress --colors --display-error-details"
+  },
+  "author": "smailsky",
+  "license": "ISC",
+  "devDependencies": {
+    "requirejs-webpack-plugin": "^1.0.2",
+    "webpack": "^1.13.0"
+  },
+  "dependencies": {}
+}

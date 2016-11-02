@@ -1,0 +1,1 @@
+require.config({"paths":{"index":"index.js?v=29f6e23e95d088f9bcd3ff732808455b"},"baseUrl":""})
