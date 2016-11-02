@@ -9,7 +9,7 @@ base on [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plu
 
 For example, given the following webpack config:
 
-see ./example
+see ./example/
 
 ```js
 var path = require("path");
@@ -89,10 +89,10 @@ new requirejsPlugin({filename: 'main.js'})
 
 Optional. Defaults to the current directory.
 
-Path where to save the created JSON file.
+Path where to save the file.
 
 ```js
-new requirejsPlugin({path: path.join(__dirname, 'app', 'views')})
+new requirejsPlugin({path: path.join(__dirname, 'app')})
 ```
 
 ### `processOutput`
@@ -104,17 +104,17 @@ Formats the assets output.
 ```js
 new requirejsPlugin({
   processOutput: function (assets) {
-    return 'window.staticMap = ' + JSON.stringify(assets)
+    return 'require.config(' + JSON.stringify(assets) + ')'
   }
 })
 ```
 
 ### `baseUrl`
 
-RequireJS baseUrl
+RequireJS baseUrl config
 
 
 ### `pathUrl`
 
-RequireJS paths dir
+RequireJS paths config module alias
 
