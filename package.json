@@ -1,0 +1,19 @@
+{
+  "name": "requirejs-webpack-plugin",
+  "main": "index.js",
+  "author": "smailsky",
+  "description": "Webpack plugin that update cache for requirejs",
+  "devDependencies": {
+    "md5": "^2.2.1"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "requirejs"
+  ],
+  "license": "MIT",
+  "version": "1.0.0"
+}
