@@ -9,6 +9,8 @@ base on [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plu
 
 For example, given the following webpack config:
 
+see ./example
+
 ```js
 var path = require("path");
 var requirejsPlugin = require('requirejs-webpack-plugin');
