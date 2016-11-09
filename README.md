@@ -1,6 +1,6 @@
 # requirejs-webpack-plugin
 
-Webpack plugin that update cache for requirejs
+Webpack plugin that update cache for requirejs,replace requirejs urlArgs
 
 base on [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin)
 

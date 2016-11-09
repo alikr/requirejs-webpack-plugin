@@ -2,19 +2,19 @@
   "name": "requirejs-webpack-plugin",
   "main": "index.js",
   "author": "smailsky",
-  "description": "Webpack plugin that update cache for requirejs",
+  "description": "Webpack plugin that update cache for requirejs,replace requirejs urlArgs",
   "devDependencies": {
   },
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "md5": "^2.2.1"
+    "mkdirp": "^0.5.1"
   },
   "keywords": [
     "webpack",
     "plugin",
-    "requirejs"
+    "requirejs",
+    "urlArgs"
   ],
   "registry ": "https://github.com/smailsky/requirejs-webpack-plugin",
   "license": "MIT",
-  "version": "1.0.3"
+  "version": "1.0.5"
 }

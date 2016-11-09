@@ -1,4 +1,3 @@
-var md5 = require('md5');
 var createQueuedWriter = require('./lib/createQueuedWriter')
 var createOutputWriter = require('./lib/createOutputWriter')
 
@@ -20,28 +19,24 @@ function requirejsWebpackPlugin (options) {
 requirejsWebpackPlugin.prototype = {
   constructor: requirejsWebpackPlugin,
   apply: function (compiler) {
-    var self = this
+    var self = this;
     compiler.plugin('after-emit', function (compilation, callback) {
-      var options = compiler.options
+      var options = compiler.options;
       var stats = compilation.getStats().toJson();
       var assetsByChunkName = stats.assetsByChunkName;
-      var baseUrl = self.options.baseUrl;
-      var pathUrl = self.options.pathUrl;
+      var {baseUrl,pathUrl} = self.options;
       var output = {paths:{}, baseUrl:baseUrl};
-      output.paths = Object.keys(assetsByChunkName).reduce(function (chunkMap, chunkName) {
-        var assets = assetsByChunkName[chunkName]
-        if (!Array.isArray(assets)) {
-          assets = [assets]
-        }
-        chunkMap[chunkName] = assets.reduce(function (typeMap, asset) {
-          var _cachedSource = compilation.assets[asset]['_cachedSource'];
-          var chunkNameStr = _cachedSource ? md5(_cachedSource) : '';
-          typeMap = pathUrl + asset + '?v=' + chunkNameStr;
-          return typeMap
-        }, {})
-
-        return chunkMap
-      }, {});
+      output.paths = stats.chunks.reduce(function(cur,prev){
+        var files = prev['files'];
+        prev['names'].reduce(function(c,p,i,a){
+          var filename = p;
+            var asset = files[i];
+            var chunkNameStr = prev['hash'];
+            cur[filename] = pathUrl + asset + '?v=' + chunkNameStr;
+            return cur;
+        },cur);
+        return cur;
+      },{});
 
       self.writer(output, function (err) {
         if (err) {
@@ -53,4 +48,4 @@ requirejsWebpackPlugin.prototype = {
   }
 }
 
-module.exports = requirejsWebpackPlugin
+module.exports = requirejsWebpackPlugin;
